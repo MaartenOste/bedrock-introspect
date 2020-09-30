@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df2368e01f90a4d1443715fe9d2f4f06",
+    "content-hash": "4e99d45919911d696cb4e89bbc5be955",
     "packages": [
         {
             "name": "composer/installers",
@@ -610,6 +610,24 @@
                 "environment"
             ],
             "time": "2020-07-14T19:22:52+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/which-template",
+            "version": "4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/which-template/",
+                "reference": "tags/4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/which-template.4.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/which-template/"
         }
     ],
     "packages-dev": [
