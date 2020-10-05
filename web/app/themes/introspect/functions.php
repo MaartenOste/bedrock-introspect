@@ -15,8 +15,19 @@ add_action('wp_enqueue_scripts', 'introspect_add_theme_scriptsstyles');
 
 
 function introspect_setup() {
+    // registratie van navigatiemenu
     register_nav_menus([
         'primary' => __('Hoofdmenu', 'introspect')
     ]); 
+
+    // custom logo registreren
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+    );
+    add_theme_support( 'custom-logo', $defaults );
+
+    // custom header registreren
+    add_theme_support( 'custom-header' );
 }
 add_action('after_setup_theme', 'introspect_setup');

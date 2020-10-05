@@ -11,7 +11,18 @@
     <!-- Header -->
         <header id="header">
             <div class="inner">
-                <a href="index.html" class="logo">introspect</a>
+                <a href="index.html" class="logo">
+                    <?php
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    
+                    if ( has_custom_logo() ) {
+                            echo '<img src="'  . $logo[0] . '" alt="' . get_bloginfo( 'name' ) . '">';
+                    } else {
+                            echo get_bloginfo( 'name' );
+                    }
+                    ?>
+                </a>
                 
                 <nav id="nav">
                 <?php 
