@@ -28,3 +28,18 @@ function introspect_setup() {
     add_theme_support( 'custom-header' );
 }
 add_action('after_setup_theme', 'introspect_setup');
+
+function introspect_register_sidebars() {
+    register_sidebar(
+        array(
+            'id'            => 'footer',
+            'name'          => __( 'Footer' ),
+            'description'   => __( 'Onderaan elke pagina' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+}
+add_action( 'widgets_init', 'introspect_register_sidebars' );
