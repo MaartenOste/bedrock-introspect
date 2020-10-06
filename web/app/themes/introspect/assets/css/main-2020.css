@@ -1,0 +1,22 @@
+#banner {
+    background-size: cover;
+    background-position: center center;
+}
+
+#news-archive {
+    padding: 2rem;
+}
+
+#news-archive .posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#news-archive .posts > article {
+    flex: 30% 1 0;
+    min-width: 400px;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+}

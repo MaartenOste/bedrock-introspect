@@ -4,6 +4,7 @@ function introspect_add_theme_scriptsstyles() {
     
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', false, '1.0', 'all');
     wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', [ 'fontawesome' ], '1.0', 'all');
+    wp_enqueue_style( 'main-2020', get_template_directory_uri() . '/assets/css/main-2020.css', [ 'main' ], '1.0', 'all');
 
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', [], 3.5, true);
@@ -21,11 +22,7 @@ function introspect_setup() {
     ]); 
 
     // custom logo registreren
-    $defaults = array(
-        'height'      => 100,
-        'width'       => 400,
-    );
-    add_theme_support( 'custom-logo', $defaults );
+    add_theme_support( 'custom-logo');
 
     // custom header registreren
     add_theme_support( 'custom-header' );

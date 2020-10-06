@@ -11,7 +11,7 @@
     <!-- Header -->
         <header id="header">
             <div class="inner">
-                <a href="index.html" class="logo">
+                <a href="<?php echo get_home_url(); ?>" class="logo">
                     <?php
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -25,15 +25,15 @@
                 </a>
                 
                 <nav id="nav">
-                <?php 
-                    $locations = get_nav_menu_locations();
-                    $menuId = $locations['primary'];
-                    $primaryNav = wp_get_nav_menu_items($menuId);
-                    foreach($primaryNav as $menuItem) :
-                ?>
-                <a href="<?php echo $menuItem->url; ?>">
-                    <?php echo $menuItem->title; ?>
-                </a>
+                    <?php 
+                        $locations = get_nav_menu_locations();
+                        $menuId = $locations['primary'];
+                        $primaryNav = wp_get_nav_menu_items($menuId);
+                        foreach($primaryNav as $menuItem) :
+                    ?>
+                    <a href="<?php echo $menuItem->url; ?>">
+                        <?php echo $menuItem->title; ?>
+                    </a>
                 <?php endforeach; ?>
                 </nav>
             </div>
