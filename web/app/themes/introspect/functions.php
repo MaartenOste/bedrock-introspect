@@ -43,3 +43,115 @@ function introspect_register_sidebars() {
     );
 }
 add_action( 'widgets_init', 'introspect_register_sidebars' );
+
+// Register Custom Post Type
+function introspect_register_stories() {
+
+	$labels = array(
+		'name'                  => _x( 'Verhalen', 'Post Type General Name', 'introspect' ),
+		'singular_name'         => _x( 'Verhaal', 'Post Type Singular Name', 'introspect' ),
+		'menu_name'             => __( 'Verhalen', 'introspect' ),
+		'name_admin_bar'        => __( 'Verhaal', 'introspect' ),
+		'archives'              => __( 'Item Archives', 'introspect' ),
+		'attributes'            => __( 'Item Attributes', 'introspect' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'introspect' ),
+		'all_items'             => __( 'All Items', 'introspect' ),
+		'add_new_item'          => __( 'Add New Item', 'introspect' ),
+		'add_new'               => __( 'Add New', 'introspect' ),
+		'new_item'              => __( 'New Item', 'introspect' ),
+		'edit_item'             => __( 'Edit Item', 'introspect' ),
+		'update_item'           => __( 'Update Item', 'introspect' ),
+		'view_item'             => __( 'View Item', 'introspect' ),
+		'view_items'            => __( 'View Items', 'introspect' ),
+		'search_items'          => __( 'Search Item', 'introspect' ),
+		'not_found'             => __( 'Not found', 'introspect' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'introspect' ),
+		'featured_image'        => __( 'Featured Image', 'introspect' ),
+		'set_featured_image'    => __( 'Set featured image', 'introspect' ),
+		'remove_featured_image' => __( 'Remove featured image', 'introspect' ),
+		'use_featured_image'    => __( 'Use as featured image', 'introspect' ),
+		'insert_into_item'      => __( 'Insert into item', 'introspect' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'introspect' ),
+		'items_list'            => __( 'Items list', 'introspect' ),
+		'items_list_navigation' => __( 'Items list navigation', 'introspect' ),
+		'filter_items_list'     => __( 'Filter items list', 'introspect' ),
+	);
+	$args = array(
+		'label'                 => __( 'Verhaal', 'introspect' ),
+		'description'           => __( 'Verhalen over keizerspoort', 'introspect' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'          => true,
+	);
+	register_post_type( 'verhalen', $args );
+
+}
+add_action( 'init', 'introspect_register_stories', 0 );
+
+// Register Custom Post Type
+function introspect_register_offer() {
+
+	$labels = array(
+		'name'                  => _x( 'Aanbod', 'Post Type General Name', 'introspect' ),
+		'singular_name'         => _x( 'Aanbod', 'Post Type Singular Name', 'introspect' ),
+		'menu_name'             => __( 'Aanbod', 'introspect' ),
+		'name_admin_bar'        => __( 'Aanbod', 'introspect' ),
+		'archives'              => __( 'Item Archives', 'introspect' ),
+		'attributes'            => __( 'Item Attributes', 'introspect' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'introspect' ),
+		'all_items'             => __( 'All Items', 'introspect' ),
+		'add_new_item'          => __( 'Add New Item', 'introspect' ),
+		'add_new'               => __( 'Add New', 'introspect' ),
+		'new_item'              => __( 'New Item', 'introspect' ),
+		'edit_item'             => __( 'Edit Item', 'introspect' ),
+		'update_item'           => __( 'Update Item', 'introspect' ),
+		'view_item'             => __( 'View Item', 'introspect' ),
+		'view_items'            => __( 'View Items', 'introspect' ),
+		'search_items'          => __( 'Search Item', 'introspect' ),
+		'not_found'             => __( 'Not found', 'introspect' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'introspect' ),
+		'featured_image'        => __( 'Featured Image', 'introspect' ),
+		'set_featured_image'    => __( 'Set featured image', 'introspect' ),
+		'remove_featured_image' => __( 'Remove featured image', 'introspect' ),
+		'use_featured_image'    => __( 'Use as featured image', 'introspect' ),
+		'insert_into_item'      => __( 'Insert into item', 'introspect' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'introspect' ),
+		'items_list'            => __( 'Items list', 'introspect' ),
+		'items_list_navigation' => __( 'Items list navigation', 'introspect' ),
+		'filter_items_list'     => __( 'Filter items list', 'introspect' ),
+	);
+	$args = array(
+		'label'                 => __( 'Aanbod', 'introspect' ),
+		'description'           => __( 'Aanbod van Keizerspoort', 'introspect' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+        'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'          => true,
+	);
+	register_post_type( 'aanbod', $args );
+
+}
+add_action( 'init', 'introspect_register_offer', 0 );
